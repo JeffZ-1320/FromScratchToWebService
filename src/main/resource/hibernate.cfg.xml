@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url"/>
+<!--    <property name="connection.driver_class"/>-->
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+
+    <!--_______________________________________________________________-->
+
+    <!--<property name="connection.url"/>-->
+    <!--<property name="connection.driver_class"/>-->
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+<!--     <property name="hbm2ddl.auto">update</property>-->
+
+    <property name="hibernate.connection.username">root</property>
+
+    <!--    mysql password  -->
+    <property name="hibernate.connection.password">f^2qC@48@#V7je&amp;hK3Yz</property>
+
+    <!--    mysql driver  -->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+    <!--    mysql connection URL  -->
+    <!--Here hibernatetest is the database name-->
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test_hibernate?useSSL=false</property>
+
+    <!--    Database dialect  -->
+    <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+    <!--// Database dialect used after 5.0 -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!--    Show sql statement  -->
+    <property name="show_sql">true</property>
+
+    <!--    Format sql statement  -->
+    <property name="format_sql">true</property>
+
+    <!--    Create a database as needed (The operation here is, if there is already this table in the database, delete this table and recreate the table)-->
+    <!--<property name="hbm2ddl.auto">create</property>-->
+    <!--Add the mapping class you just generated-->
+<!--    <mapping class="org.example.UserEntity"></mapping>-->
+<!--    <mapping class="org.example.PetsEntity"></mapping>-->
+
+
+
+  </session-factory>
+</hibernate-configuration>
