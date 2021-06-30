@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
 <!--    <link href="css/dashboard.css" rel="stylesheet">-->
@@ -23,7 +23,8 @@
 
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+<!--            <a class="nav-link" id="signOut">Sign out</a>-->
+            <a class="nav-link" href="../sign_in" id="signOut">Sign out</a>
         </li>
     </ul>
 </nav>
@@ -149,7 +150,7 @@
                         <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
                     </div>
                     <div class="col">
-                        <label for="birthdate">Birthdate</label>
+                        <label for="birthdate">Birthdate (YYYY-MM-DD)</label>
                         <input type="text" class="form-control" id="birthdate" placeholder="Enter Birthdate">
                     </div>
                 </form>
@@ -238,6 +239,7 @@
                         <th>Pet ID</th>
                         <th>Pet Name</th>
                         <th>Birthdate</th>
+                        <th>Breed Type</th>
                         <th>Sex</th>
                         <th>Color</th>
                         <th>OwnerID</th>
@@ -261,7 +263,7 @@
 
 
 <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/main.js"></script>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/dashboard.js"></script>
 </body>
 </html>

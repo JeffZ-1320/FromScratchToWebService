@@ -8,10 +8,11 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/secure/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
 
     @GetMapping("/allUsers")
     public List<UserEntity> getAllUsers(){

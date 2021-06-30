@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Create an account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 my-3">
+      <div class="card">
+        <header class="card-header">
+          <h4 class="card-title mt-2">Sign up</h4>
+        </header>
+        <article class="card-body">
+          <form>
+            <div class="form-row">
+              <div class="col form-group">
+                <label>First name </label>
+                <input type="text" class="form-control" placeholder="" id="firstName">
+              </div> <!-- form-group end.// -->
+              <div class="col form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control" placeholder="" id="lastName">
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" class="form-control" placeholder="" id="email">
+              <span id="emailStatus">
+<!--                <span class="badge rounded-pill bg-secondary">Email</span>-->
+              </span>
+              <small class="form-text text-muted" > We'll never share your email with anyone else.</small>
+
+            </div> <!-- form-group end.// -->
+
+            <div class="form-group">
+              <label>Create password</label>
+              <input class="form-control" type="password" id="pw">
+            </div> <!-- form-group end.// -->
+            <div class="form-group">
+              <label>Confirm password</label>
+              <input class="form-control" type="password" id="pwConfirm">
+            </div> <!-- form-group end.// -->
+            <span id="pwStatus"></span>
+            <div class="form-group mt-2">
+              <button type="button" class="btn btn-primary btn-block" id="registerBtn"> Register  </button>
+            </div> <!-- form-group// -->
+            <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
+          </form>
+        </article> <!-- card-body end .// -->
+        <div class="border-top card-body text-center">Have an account? <a href="http://localhost:8080/sign_in">Log In</a></div>
+      </div> <!-- card.// -->
+    </div> <!-- col.//-->
+
+  </div> <!-- row.//-->
+
+
+</div>
+<!--container end.//-->
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/register.js"></script>
+</body>
+</html>

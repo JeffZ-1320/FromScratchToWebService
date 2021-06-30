@@ -7,17 +7,26 @@ $("#getByIdButton").click(() => {
 });
 
 $("#addButton").click(() => {
-    preAddNewPet(preAddNewUser, preAddNewPet);
+    validateCheckbox(preAddNewUser, preAddNewPet);
 })
 
 $("#updateButton").click(() => {
-    validateCheckbox(preUpdateUser, preUpdatePet())
+    validateCheckbox(preUpdateUser, preUpdatePet);
 });
 
 $("#deleteButton").click(() => {
-    preAddNewPet(preDeleteUser, preDeletePet);
-})
+    validateCheckbox(preDeleteUser, preDeletePet);
+});
 
+$("#signOut").click(() => {
+    // document.cookie = "test=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    ajaxRequest("http://localhost:8080/auth/deleteCookie", "POST", "{}").then((response) => {
+        console.log(response);
+    }).catch((error) => {
+        alert(error);
+    });
+
+});
 
 function validateCheckbox(userFunction, petFunction){
     if($("#selectUser").prop("checked") && $("#selectPet").prop("checked")){
@@ -28,7 +37,7 @@ function validateCheckbox(userFunction, petFunction){
     }else if($("#selectUser").prop("checked")){
         userFunction();
     }else{
-        alert("At least one of the box must be checked")
+        alert("At least one of the box must be checked");
     }
 }
 
@@ -48,7 +57,8 @@ function preGetPetById(){
 function getPetById(id){
     ajaxRequest("http://localhost:8080/pet/getPetById/" + id, "GET", null).then((response) => {
         $("#petBody").empty();
-        petResponseToTable(response);
+        // console.log(response);
+        petResponseToTable([response]);
     });
 
 }
@@ -105,7 +115,7 @@ function deletePet(id){
 function getAllUsers(){
     ajaxRequest("http://localhost:8080/user/allUsers", "GET", null).then((response) => {
         $("#userBody").empty();
-        userResponseToTable(response)
+        userResponseToTable(response);
     });
 }
 
@@ -116,15 +126,15 @@ function preGetUserById(){
 function getUserById(id){
     ajaxRequest("http://localhost:8080/user/getUserById/" + id, "GET", null).then((response) => {
         $("#userBody").empty();
-        userResponseToTable(response)
+        userResponseToTable([response]);
     });
 }
 
 function preAddNewUser(){
     const newUser = {
-        firstName: $("#firstName"),
-        lastName: $("#lastName"),
-        numberOfPets: $("#numberOfPets")
+        firstName: $("#firstName").val(),
+        lastName: $("#lastName").val(),
+        numberOfPets: $("#numberOfPets").val()
     };
     addNewUser(newUser);
 }
@@ -137,10 +147,10 @@ function addNewUser(newUser){
 
 function preUpdateUser(){
     const updatedUser = {
-        userId: $("#userId"),
-        firstName: $("#firstName"),
-        lastName: $("#lastName"),
-        numberOfPets: $("#numberOfPets")
+        userId: $("#userId").val(),
+        firstName: $("#firstName").val(),
+        lastName: $("#lastName").val(),
+        numberOfPets: $("#numberOfPets").val()
     };
     updateUser(updatedUser);
 }
@@ -189,6 +199,7 @@ function petResponseToTable(response){
             "<td>" + response[i].petName + "</td>" +
             "<td>" + response[i].birthdate + "</td>" +
             // need regex for birthdate
+            "<td>" + response[i].breedType + "</td>" +
             "<td>" + response[i].sex + "</td>" +
             "<td>" + response[i].color+ "</td>" +
             "<td>" + response[i].userId + "</td>"
