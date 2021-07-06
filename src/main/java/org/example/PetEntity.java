@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "pet", schema = "test_hibernate")
-public class PetsEntity implements Serializable {
+public class PetEntity implements Serializable {
     @Id
     private int petId;
     @NotBlank

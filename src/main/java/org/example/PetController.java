@@ -1,6 +1,5 @@
 package org.example;
 
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -9,26 +8,26 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/secure/pet")
-public class PetsController {
+public class PetController {
     @Autowired
     private PetRepository petRepository;
 
 
     @GetMapping("/allPets")
-    public List<PetsEntity> getAllPets(){
-        List<PetsEntity> allPets = petRepository.findAll();
+    public List<PetEntity> getAllPets(){
+        List<PetEntity> allPets = petRepository.findAll();
         return allPets;
 
     }
 
     @GetMapping("/getPetById/{id}")
-    public PetsEntity getPetById(@PathVariable int id){
+    public PetEntity getPetById(@PathVariable int id){
         // haven't defined an exception
         return petRepository.findById(id).orElse(null);
     }
 
     @PostMapping("/newPet")
-    public PetsEntity addPet(@Valid @RequestBody PetsEntity pet){
+    public PetEntity addPet(@Valid @RequestBody PetEntity pet){
 //        ZoneId zoneUTC = ZoneId.of("UTC");
 //        ZonedDateTime petBrithdate = pet.getBirthdate();
 //        ZonedDateTime UTCTime = nowMontréal.withZoneSameInstant( ZoneOffset.UTC );
@@ -36,11 +35,11 @@ public class PetsController {
     }
 
     @PutMapping("/updatePet/{id}")
-    public PetsEntity updatePetRecord(@PathVariable int id, @NotNull @Valid @RequestBody PetsEntity newPet){
+    public PetEntity updatePetRecord(@PathVariable int id, @NotNull @Valid @RequestBody PetEntity newPet){
 //        PetsEntity petEntity = petRepository.findById(id).orElse(null);
 //        petEntity.setUserId(newPet.getUserId());
 //        petEntity.setPetName(newPet.getPetName());
-////        System.out.println(newPet.getBirthdate());
+//        System.out.println(newPet.getBirthdate());
 //        petEntity.setBirthdate(newPet.getBirthdate());
 //        petEntity.setColor(newPet.getColor());
 //        petEntity.setBreedType(newPet.getBreedType());

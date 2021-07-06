@@ -31,10 +31,16 @@ registerBtn.click(() => {
             password: pw.val()
         }
         ajaxRequest("http://localhost:8080/auth/register", "POST", newUser).then((response) => {
-            console.log(response);
-            // window.location.replace("http://localhost:8080/secure/dashboard");
+            let autoSignIn = {
+                email: newUser.email,
+                password: newUser.password
+            }
+            ajaxRequest("http://localhost:8080/auth/login", "POST", autoSignIn).then((response) => {
+                // console.log(response);
+                window.location.replace("http://localhost:8080/secure/dashboard");
+            });
         }).catch((error) => {
-            alert(error);
+            alert(JSON.stringify(error));
         });
     }else{
         alert("At least one register criteria was not met")

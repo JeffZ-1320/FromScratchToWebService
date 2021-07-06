@@ -49,7 +49,7 @@
     <!--<property name="hbm2ddl.auto">create</property>-->
     <!--Add the mapping class you just generated-->
 <!--    <mapping class="org.example.UserEntity"></mapping>-->
-<!--    <mapping class="org.example.PetsEntity"></mapping>-->
+<!--    <mapping class="org.example.PetEntity"></mapping>-->
 
 
 

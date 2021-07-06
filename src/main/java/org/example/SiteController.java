@@ -19,4 +19,5 @@ public class SiteController {
     public String register(){
         return "register";
     }
+
 }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">-->
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/Front end testing/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+<!--    <link href="css/newDashboard.css" rel="stylesheet">-->
+</head>
+
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+<!--            <a class="nav-link" id="signOut">Sign out</a>-->
+            <a class="nav-link" href="../sign_in" id="signOut">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+<!--        table div-->
+        <div class="col ml-sm-auto mr-sm-auto pt-3 px-4">
+<!--            user table-->
+            <h2>User Table</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Number of Pets</th>
+                    </tr>
+                    </thead>
+                    <tbody id="userBody">
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+<!--            pets table-->
+            <h2>Pet Table</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>Pet ID</th>
+                        <th>Pet Name</th>
+                        <th>Birthdate</th>
+                        <th>Breed Type</th>
+                        <th>Sex</th>
+                        <th>Color</th>
+                        <th>OwnerID</th>
+                    </tr>
+                    </thead>
+                    <tbody id="petBody">
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col">
+            <main role="main" class="col-md-9 ml-sm-auto mr-sm-auto col-lg-10 pt-3 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <!--                <input class="form-control form-control-dark w-100 mx-2 " type="text" placeholder="Search" aria-label="Search" id="searchbar">-->
+                </div>
+
+                <div>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col">
+                            <label for="userId">User ID</label>
+                            <input type="text" class="form-control" id="userId" aria-describedby="emailHelp" placeholder="Enter User ID">
+                        </div>
+                        <div class="col">
+                            <label for="petId">Pet ID</label>
+                            <input type="text" class="form-control" id="petId" placeholder="Enter Pet ID">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="Enter First Name">
+                        </div>
+                        <div class="col">
+                            <label for="petName">Pet Name</label>
+                            <input type="text" class="form-control" id="petName" placeholder="Enter Pet Name">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
+                        </div>
+                        <div class="col">
+                            <label for="birthdate">Birthdate (YYYY-MM-DD)</label>
+                            <input type="text" class="form-control" id="birthdate" placeholder="Enter Birthdate">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col">
+                            <label for="numberOfPets">Number of Pets</label>
+                            <input type="text" class="form-control" id="numberOfPets" aria-describedby="emailHelp" placeholder="Enter Number of Pets">
+                        </div>
+                        <div class="col">
+                            <label for="breedType">Breed Type</label>
+                            <input type="text" class="form-control" id="breedType" placeholder="Enter Breed Type">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col mb-0 " >
+                            <label ></label>
+                            <input type="text" class="form-control" placeholder=" " disabled>
+                        </div>
+                        <div class="col">
+                            <label for="sex">Sex</label>
+                            <input type="text" class="form-control" id="sex" placeholder="Enter Pet Sex">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col mb-0 " >
+                            <label ></label>
+                            <input type="text" class="form-control" placeholder=" " disabled>
+                        </div>
+                        <div class="col">
+                            <label for="color">Color</label>
+                            <input type="text" class="form-control" id="color" placeholder="Enter Pet Color">
+                        </div>
+                    </form>
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col mb-0 " >
+                            <label></label>
+                            <input type="text" class="form-control"  placeholder=" " disabled>
+                        </div>
+                        <div class="col">
+                            <label for="ownerId">Owner ID</label>
+                            <input type="text" class="form-control" id="ownerId" placeholder="Enter Owner Id">
+                        </div>
+                    </form>
+
+                    <div class="mt-2">
+                        <input type="checkbox" value="selectUser" id="selectUser">
+                        <label for="selectUser">For user</label>
+                        <input type="checkbox" value="selectPet" id="selectPet">
+                        <label for="selectPet">For pet</label>
+                    </div>
+                    <button type="button" class="btn btn-primary my-3" id="getAllButton">Get All</button>
+                    <button type="button" class="btn btn-primary my-3" id="getByIdButton">Get By ID</button>
+                    <button type="button" class="btn btn-primary my-3" id="addButton">Add</button>
+                    <button type="button" class="btn btn-primary my-3" id="updateButton">Update</button>
+                    <button type="button" class="btn btn-primary my-3" id="deleteButton">Delete</button>
+                </div>
+
+
+            </main>
+        </div>
+
+    </div>
+</div>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<script src="/Front end testing/static/js/jquery-3.6.0.min.js"></script>
+<script src="/Front end testing/static/js/dashboard.js"></script>
+</body>
+</html>

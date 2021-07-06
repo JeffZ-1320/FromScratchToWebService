@@ -70,9 +70,9 @@ public class DBUpdater {
      * @param petId primary key identification for the database
      * @return an UserEntity object; null when the requested data does not exist
      */
-    public PetsEntity getEntity(PetsEntity pet, int petId){
+    public PetEntity getEntity(PetEntity pet, int petId){
         pet.setPetId(petId);
-        PetsEntity obtainedPet = session.get(pet.getClass(),petId);
+        PetEntity obtainedPet = session.get(pet.getClass(),petId);
 //        System.out.println(obtainedPet.getPetId() + " " + obtainedPet.getPetName());
         return obtainedPet;
     }

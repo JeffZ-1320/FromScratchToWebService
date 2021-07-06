@@ -1,6 +1,7 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -10,9 +11,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/secure/user")
 public class UserController {
-    @Autowired
     private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @GetMapping("/allUsers")
     public List<UserEntity> getAllUsers(){
@@ -27,6 +33,7 @@ public class UserController {
 
     @PostMapping("/newUser")
     public UserEntity addUser(@Valid @RequestBody UserEntity user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -37,7 +44,8 @@ public class UserController {
         userEntity.setFirstName(newUser.getFirstName());
         userEntity.setLastName(newUser.getLastName());
         userEntity.setNumberOfPets(newUser.getNumberOfPets());
-        return userRepository.save(newUser);
+        userEntity.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        return userRepository.save(userEntity);
     }
 
     @DeleteMapping("/deleteUser/{id}")

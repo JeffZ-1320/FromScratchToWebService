@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/newDashboard.css" rel="stylesheet">
+    <link href="/Front end testing/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Front end testing/static/css/newDashboard.css" rel="stylesheet">
 
 </head>
     <body>
@@ -12,7 +12,7 @@
         <nav class="navbar navbar-light bg-light border border-bottom sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand fs-5" href="../secure/dashboard">
-                    <img src="/image/dogBoneLogo.png" alt="" width="25" height="25" class="d-inline-block align-text-middle">
+                    <img src="/Front end testing/static/image/dogBoneLogo.png" alt="" width="25" height="25" class="d-inline-block align-text-middle">
                     Dashboard
                 </a>
 
@@ -48,7 +48,6 @@
                         <!-- user table -->
                         <div>
                             <h3>User Table</h3>
-                            <img src="/image/addIcon.png" alt="" width="25" height="25" class="d-inline-block align-text-middle" id="addUser" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <table class="table table-hover" >
                                 <thead>
                                 <tr>
@@ -60,7 +59,21 @@
                                 </tr>
                                 </thead>
                                 <tbody id="userTableBody">
-                                    <!-- user data goes here -->
+                                    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <td class="userId">0</td>
+                                        <td class="firstName">Jeff</td>
+                                        <td class="lastName">Zhuo</td>
+                                        <td class="email">jeff@jeff.com</td>
+                                        <td class="numberOfPets">1</td>
+                                    </tr>
+
+                                    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <td class="userId">1</td>
+                                        <td class="firstName">Jeff</td>
+                                        <td class="lastName">Zhuo</td>
+                                        <td class="email">jeff@jeff.com</td>
+                                        <td class="numberOfPets">1</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -71,7 +84,6 @@
                         <!-- pet table -->
                         <div class="mt-auto">
                             <h3>Pet Table</h3>
-                            <img src="/image/addIcon.png" alt="" width="25" height="25" class="d-inline-block align-text-middle" id="addPet" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <table class="table table-hover" >
                                 <thead>
                                     <tr>
@@ -85,7 +97,25 @@
                                     </tr>
                                 </thead>
                                 <tbody id="petTableBody">
+                                    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <td class="petId">0</td>
+                                        <td class="petName">Diana</td>
+                                        <td class="birthdate">2021-07-01</td>
+                                        <td class="breedType">Dog</td>
+                                        <td class="sex">Female</td>
+                                        <td class="color">White</td>
+                                        <td class="ownerId">0</td>
+                                    </tr>
 
+                                    <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <td class="petId">1</td>
+                                        <td class="petName">Diana</td>
+                                        <td class="birthdate">2021-07-01</td>
+                                        <td class="breedType">Dog</td>
+                                        <td class="sex">Female</td>
+                                        <td class="color">White</td>
+                                        <td class="ownerId">0</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -100,7 +130,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span id="modalHeader"><h5 class="modal-title">Modal title</h5></span>
+                        <h5 class="modal-title" id="modalHeader">Modal title</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -110,20 +140,17 @@
                     <div class="modal-footer" id="modalFooter">
                         <butotn type="button" class="btn btn-danger" id="deleteBtn">Delete</butotn>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="saveBtn" data-bs-dismiss="modal">Save changes</button>
-                        <button type="button" class="btn btn-success" id="newBtn" data-bs-dismiss="modal">Create</button>
+                        <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-<!--        <script src="/js/dashboard.js"></script>-->
-        <script src="/js/dashboard.js"></script>
+        <script src="/Front end testing/static/js/jquery-3.6.0.min.js"></script>
+        <script src="/Front end testing/static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/Front end testing/static/js/dashboard.js"></script>
+        <script src="/Front end testing/static/js/newDashboard.js"></script>
 
     </body>
 </html>
