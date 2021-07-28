@@ -49,4 +49,4 @@ breedtype table
 * UI for Pet and User table
 * Home Page
 * Password validation in dashboard
-* Write some more comments in your code
+* More comments in code
