@@ -13,7 +13,6 @@
   * Add email attribute to dashboard
 * Home Page
 
-
 breedtype table 
 
 ## July 01, 2021
